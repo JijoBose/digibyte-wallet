@@ -5,6 +5,7 @@ const DEVICE_HEIGHT = Dimensions.get('screen').height;
 
 export default {
   containerHeight: {
+    flex: 1,
     height: DEVICE_HEIGHT,
   },
 };

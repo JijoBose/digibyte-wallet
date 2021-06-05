@@ -9,9 +9,9 @@ const StackNavigator = createStackNavigator();
 const StackedNavigation = () => (
   <StackNavigator.Navigator
     // initialRouteName="LandingScreen"
-    screenOptions={{
-      header: () => null,
-    }}>
+    // mode="card"
+    headerMode="screen"
+    screenOptions={{header: () => null}}>
     <StackNavigator.Screen component={LandingScreen} name="LandingScreen" />
     <StackNavigator.Screen component={RecoverScreen} name="RecoverScreen" />
   </StackNavigator.Navigator>

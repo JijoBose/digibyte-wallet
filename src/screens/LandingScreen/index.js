@@ -16,8 +16,8 @@ const LandingScreen = ({navigation}) => {
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
 
   const goRecover = () => {
-    // navigation.navigate({name: 'RecoverScreen'});
     navigation.navigate('stack', {screen: 'RecoverScreen'});
+    // navigation.push('RecoverScreen');
   };
 
   return (
