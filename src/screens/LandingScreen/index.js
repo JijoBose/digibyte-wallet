@@ -11,9 +11,14 @@ import Layout from '../../components/Layout';
 
 import styles from './styles';
 
-const LandingScreen = () => {
+const LandingScreen = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
+
+  const goRecover = () => {
+    // navigation.navigate({name: 'RecoverScreen'});
+    navigation.navigate('stack', {screen: 'RecoverScreen'});
+  };
 
   return (
     <Layout>
@@ -27,7 +32,9 @@ const LandingScreen = () => {
             <TouchableOpacity style={styles.transparentButton}>
               <Text style={textTheme}>Create new wallet</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.transparentButton}>
+            <TouchableOpacity
+              onPress={() => goRecover()}
+              style={styles.transparentButton}>
               <Text style={textTheme}>Recover wallet</Text>
             </TouchableOpacity>
           </View>
