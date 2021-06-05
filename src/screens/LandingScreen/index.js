@@ -7,23 +7,22 @@ import {
   useColorScheme,
 } from 'react-native';
 import Colors from '../../theme';
+import Layout from '../../components/Layout';
+
 import styles from './styles';
 
-const LandingScreen = () => {
+const LandingScreen = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
 
+  const goRecover = () => {
+    navigation.navigate('stack', {screen: 'RecoverScreen'});
+    // navigation.push('RecoverScreen');
+  };
+
   return (
-    <>
-      <View
-        style={[
-          {backgroundColor: isDarkMode ? Colors.black : Colors.white},
-          styles.mainContainer,
-        ]}>
+    <Layout>
+      <View style={[styles.mainContainer]}>
         <Image source={require('../../../assets/images/icon.png')} />
         <View style={styles.buttonContent}>
           <TouchableOpacity style={styles.digiButtonStyle}>
@@ -33,13 +32,15 @@ const LandingScreen = () => {
             <TouchableOpacity style={styles.transparentButton}>
               <Text style={textTheme}>Create new wallet</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.transparentButton}>
+            <TouchableOpacity
+              onPress={() => goRecover()}
+              style={styles.transparentButton}>
               <Text style={textTheme}>Recover wallet</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
-    </>
+    </Layout>
   );
 };
 

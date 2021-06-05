@@ -7,23 +7,11 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
-import LandingScreen from './src/screens/LandingScreen';
-import Colors from './src/theme';
+import 'react-native-gesture-handler';
+import RootNavigator from './src/navigation/index';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <LandingScreen />
-    </SafeAreaView>
-  );
+  return <RootNavigator />;
 };
 
 export default App;
