@@ -25,32 +25,19 @@ const LandingScreen = () => {
           styles.mainContainer,
         ]}>
         <Image source={require('../../../assets/images/icon.png')} />
-        <View
-          style={{
-            height: 100,
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          }}>
+        <View style={styles.buttonContent}>
           <TouchableOpacity style={styles.digiButtonStyle}>
             <Text style={styles.boldButtonText}>CREATE NEW DIGI-ID</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              marginTop: 20,
-              height: 100,
-              backgroundColor: 'white',
-              width: '100%',
-            }}>
-            <Text style={{}}>CREATE NEW DIGI-ID</Text>
-          </TouchableOpacity>
+          <View style={styles.bottomButtonContainer}>
+            <TouchableOpacity style={styles.transparentButton}>
+              <Text style={textTheme}>Create new wallet</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.transparentButton}>
+              <Text style={textTheme}>Recover wallet</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        {/* <Section title="Step One">
-        Edit <Text style={styles.highlight}>App.js</Text> to change this screen
-        and then come back to see your edits.
-      </Section>
-      <Section title="Learn More">
-        Read the docs to discover what to do next:
-      </Section> */}
       </View>
     </>
   );

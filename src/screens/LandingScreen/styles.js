@@ -25,6 +25,23 @@ export default {
     fontSize: 18,
     color: 'white',
   },
+  buttonContent: {
+    height: 100,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+  bottomButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  transparentButton: {
+    marginTop: 20,
+    height: 100,
+    backgroundColor: 'transparent',
+    width: '40%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   // mainContainer: {
   //   alignItems: 'center',
   //   justifyContent: 'flex-end',
