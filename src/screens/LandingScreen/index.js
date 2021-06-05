@@ -7,23 +7,17 @@ import {
   useColorScheme,
 } from 'react-native';
 import Colors from '../../theme';
+import Layout from '../../components/Layout';
+
 import styles from './styles';
 
 const LandingScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
 
   return (
-    <>
-      <View
-        style={[
-          {backgroundColor: isDarkMode ? Colors.black : Colors.white},
-          styles.mainContainer,
-        ]}>
+    <Layout>
+      <View style={[styles.mainContainer]}>
         <Image source={require('../../../assets/images/icon.png')} />
         <View style={styles.buttonContent}>
           <TouchableOpacity style={styles.digiButtonStyle}>
@@ -39,7 +33,7 @@ const LandingScreen = () => {
           </View>
         </View>
       </View>
-    </>
+    </Layout>
   );
 };
 
