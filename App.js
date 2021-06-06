@@ -8,6 +8,8 @@
 
 import React from 'react';
 import 'react-native-gesture-handler';
+import './shim.js';
+import crypto from 'crypto';
 import RootNavigator from './src/navigation/index';
 
 const App = () => {
