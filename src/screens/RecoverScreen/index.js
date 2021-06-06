@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {
+  Alert,
   View,
   Text,
   useColorScheme,
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import bip39 from 'react-native-bip39';
+import Mnemonic from 'digicore-mnemonic';
 import Colors from '../../theme';
 import Layout from '../../components/Layout';
 import styles from './styles';
@@ -16,9 +17,16 @@ const RecoverScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
 
-  const generateSeed = async () => {
-    const mnemonic = await bip39.entropyToMnemonic('133755ff');
-    setSeed(mnemonic);
+  const restoreSeed = async () => {
+    var valid = Mnemonic.isValid(seed);
+    if (!valid) {
+      Alert.alert('Seed not valid');
+      return;
+    }
+    var code = new Mnemonic(seed, Mnemonic.Words.ENGLISH);
+    var xpriv = await code.toHDPrivateKey();
+    //Todo - Secure storage
+    console.log(xpriv); // this returns xpriv keys
   };
 
   return (
@@ -29,7 +37,6 @@ const RecoverScreen = () => {
             Enter the Personal Recovery Key for the DigiWallet you want to
             recover
           </Text>
-          <Text>{seed}</Text>
         </View>
         <View style={styles.contentPadding}>
           <TextInput
@@ -38,11 +45,13 @@ const RecoverScreen = () => {
               borderColor: textTheme.color,
               color: textTheme.color,
             }}
+            value={seed}
+            onChangeText={text => setSeed(text)}
             autoCapitalize="none"
           />
         </View>
         <TouchableOpacity
-          onPress={() => generateSeed()}
+          onPress={() => restoreSeed()}
           style={{
             ...styles.restoreBtn,
           }}>
