@@ -1,18 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
+  Alert,
   View,
   Text,
   useColorScheme,
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import Mnemonic from 'digicore-mnemonic';
 import Colors from '../../theme';
 import Layout from '../../components/Layout';
 import styles from './styles';
 
 const RecoverScreen = () => {
+  const [seed, setSeed] = useState('');
   const isDarkMode = useColorScheme() === 'dark';
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
+
+  const restoreSeed = async () => {
+    var valid = Mnemonic.isValid(seed);
+    if (!valid) {
+      Alert.alert('Seed not valid');
+      return;
+    }
+    var code = new Mnemonic(seed, Mnemonic.Words.ENGLISH);
+    var xpriv = await code.toHDPrivateKey();
+    //Todo - Secure storage
+    console.log(xpriv); // this returns xpriv keys
+  };
 
   return (
     <Layout>
@@ -30,10 +45,13 @@ const RecoverScreen = () => {
               borderColor: textTheme.color,
               color: textTheme.color,
             }}
+            value={seed}
+            onChangeText={text => setSeed(text)}
             autoCapitalize="none"
           />
         </View>
         <TouchableOpacity
+          onPress={() => restoreSeed()}
           style={{
             ...styles.restoreBtn,
           }}>
