@@ -11,9 +11,11 @@ import Mnemonic from 'digicore-mnemonic';
 import Colors from '../../theme';
 import Layout from '../../components/Layout';
 import styles from './styles';
+import Address from '../../lib/Address';
+import testSeed from './seed';
 
 const RecoverScreen = () => {
-  const [seed, setSeed] = useState('');
+  const [seed, setSeed] = useState(testSeed);
   const isDarkMode = useColorScheme() === 'dark';
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
 
@@ -23,10 +25,8 @@ const RecoverScreen = () => {
       Alert.alert('Seed not valid');
       return;
     }
-    var code = new Mnemonic(seed, Mnemonic.Words.ENGLISH);
-    var xpriv = await code.toHDPrivateKey();
-    //Todo - Secure storage
-    console.log(xpriv); // this returns xpriv keys
+    const pair = await Address.deriveChildIndex(seed, false, 0);
+    console.log(pair);
   };
 
   return (
