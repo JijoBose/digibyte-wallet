@@ -26,7 +26,11 @@ const RecoverScreen = () => {
     //   return;
     // }
     const pair = await Address.deriveChildIndex(seed, false, 0);
+    const prvt = await Address.addressFromPrivkey(
+      'L1GR9Uv5aUphxE5re5RtXpi7vtY4cMPxo7USYX2NTyf64QtPgk2K',
+    );
     console.log(pair);
+    console.log(prvt);
   };
 
   return (

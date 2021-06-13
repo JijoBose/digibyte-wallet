@@ -1,0 +1,12 @@
+diff --git a/node_modules/digibytejs-mnemonic/lib/mnemonic.js b/node_modules/digibytejs-mnemonic/lib/mnemonic.js
+index d885a97..58e3d35 100644
+--- a/node_modules/digibytejs-mnemonic/lib/mnemonic.js
++++ b/node_modules/digibytejs-mnemonic/lib/mnemonic.js
+@@ -1,6 +1,6 @@
+ 'use strict';
+ 
+-var digibyte = require('digibyte');
++var digibyte = require('../../digibyte');
+ var BN = digibyte.crypto.BN;
+ var unorm = require('unorm');
+ var _ = digibyte.deps._;
