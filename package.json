@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "./node_modules/.bin/rn-nodeify --hack --install"
+    "postinstall": "patch-package && ./node_modules/.bin/rn-nodeify --hack --install"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
@@ -21,11 +21,12 @@
     "browserify-zlib": "^0.1.4",
     "console-browserify": "^1.2.0",
     "constants-browserify": "^1.0.0",
-    "digicore-mnemonic": "^1.1.1",
+    "digiutility": "https://github.com/JijoBose/digiutility.git",
     "dns.js": "^1.0.1",
     "domain-browser": "^1.2.0",
     "events": "^1.1.1",
     "https-browserify": "^0.0.1",
+    "patch-package": "^6.4.7",
     "path-browserify": "^0.0.0",
     "process": "^0.11.10",
     "punycode": "^1.4.1",

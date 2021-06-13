@@ -7,11 +7,11 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import Mnemonic from 'digicore-mnemonic';
 import Colors from '../../theme';
 import Layout from '../../components/Layout';
 import styles from './styles';
-import Address from '../../lib/Address';
+// import Address from '../../lib/Address';
+import Address from 'digiutility/lib/Address';
 import testSeed from './seed';
 
 const RecoverScreen = () => {
@@ -20,11 +20,11 @@ const RecoverScreen = () => {
   const textTheme = {color: isDarkMode ? Colors.white : Colors.black};
 
   const restoreSeed = async () => {
-    var valid = Mnemonic.isValid(seed);
-    if (!valid) {
-      Alert.alert('Seed not valid');
-      return;
-    }
+    // var valid = Mnemonic.isValid(seed);
+    // if (!valid) {
+    //   Alert.alert('Seed not valid');
+    //   return;
+    // }
     const pair = await Address.deriveChildIndex(seed, false, 0);
     console.log(pair);
   };
