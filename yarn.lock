@@ -2690,6 +2690,19 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+digibyte@^0.15.2:
+  version "0.15.8"
+  resolved "https://registry.yarnpkg.com/digibyte/-/digibyte-0.15.8.tgz#76b564cd73121a0844bdb985a8bf790b194243be"
+  integrity sha512-l2D8t4g5CBEiowHDGYrsmxrHWYFT5Ebdwp9IzzoEtJXPQHWflMpvvLiuP+btVM4vZX0wz2rbOFIPMRJ97Qix/w==
+  dependencies:
+    bn.js "=4.11.8"
+    bs58 "=4.0.1"
+    elliptic "=6.4.0"
+    inherits "=2.0.1"
+    lodash "^4.17.15"
+    node-rsa latest
+    sffc-encoder "^0.1.9"
+
 "digibyte@git://github.com/digicontributer/digibyte-js.git#27156cd1cb4430c4a4959f46e809629846694434":
   version "0.15.8"
   resolved "git://github.com/digicontributer/digibyte-js.git#27156cd1cb4430c4a4959f46e809629846694434"
@@ -2702,20 +2715,22 @@ diffie-hellman@^5.0.0:
     node-rsa latest
     sffc-encoder "^0.1.9"
 
-"digibytejs-mnemonic@https://github.com/JijoBose/digibytejs-mnemonic.git":
+digibytejs-mnemonic@^1.5.2:
   version "1.5.2"
-  resolved "https://github.com/JijoBose/digibytejs-mnemonic.git#f068a229e72cf87672ff6aa89a6a4582bdc1e96b"
+  resolved "https://registry.yarnpkg.com/digibytejs-mnemonic/-/digibytejs-mnemonic-1.5.2.tgz#04c5d69204248212407eec40993f5297a4d6222f"
+  integrity sha512-p/63jcufeNww4pQLvKY2SULeRc0bdOczu9iKIZLqL6G+jZ8NCLzdOxxoUR1QQnYIlpXjhqcGOWit5AILC086Qg==
   dependencies:
-    digibyte "git://github.com/digicontributer/digibyte-js.git#27156cd1cb4430c4a4959f46e809629846694434"
+    digibyte "^0.15.2"
     unorm "^1.3.3"
 
-"digiutility@https://github.com/JijoBose/digiutility.git":
-  version "0.0.1"
-  resolved "https://github.com/JijoBose/digiutility.git#9b51be5b4f15a2648e7cd8bf1ed08ec9b4bd00d6"
+digiutility@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/digiutility/-/digiutility-0.0.2.tgz#15abd656aa1a7fb7cec8fbaea824b9ec58376dfe"
+  integrity sha512-MafdwLiFM3u+32j+kL1pn8+lzC99A3tStg62G2gzrbh6sZMCRoDJ80hzKCdRJJKofJjqamEqAeqb0sphDJepIQ==
   dependencies:
     bluebird "^3.7.2"
     digibyte "git://github.com/digicontributer/digibyte-js.git#27156cd1cb4430c4a4959f46e809629846694434"
-    digibytejs-mnemonic "https://github.com/JijoBose/digibytejs-mnemonic.git"
+    digibytejs-mnemonic "^1.5.2"
     request "^2.88.2"
 
 dns.js@^1.0.1:

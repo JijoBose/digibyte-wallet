@@ -12,7 +12,9 @@ import Layout from '../../components/Layout';
 import styles from './styles';
 // import Address from '../../lib/Address';
 import Address from 'digiutility/lib/Address';
-import testSeed from './seed';
+// import testSeed from './seed';
+const testSeed =
+  'music radio witness crucial fever able lift action scrub sad brand easily';
 
 const RecoverScreen = () => {
   const [seed, setSeed] = useState(testSeed);
@@ -25,12 +27,11 @@ const RecoverScreen = () => {
     //   Alert.alert('Seed not valid');
     //   return;
     // }
-    const pair = await Address.deriveChildIndex(seed, false, 0);
-    const prvt = await Address.addressFromPrivkey(
-      'L1GR9Uv5aUphxE5re5RtXpi7vtY4cMPxo7USYX2NTyf64QtPgk2K',
-    );
+    const pair = Address.deriveChildIndex(testSeed, false, 0);
+    const hdPrivKey = Address.seedToHdKey(testSeed);
+    console.log('hdPriv', hdPrivKey.xprivkey);
+    console.log(pair.address);
     console.log(pair);
-    console.log(prvt);
   };
 
   return (
