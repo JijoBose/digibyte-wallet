@@ -6,3 +6,4 @@ Digibyte Wallet built with React Native
 
 Contribute:
 DGB (DGB) - Sc9nryf6MHKKCZNZktpgjSTfZ8mD1ZHKMu
+FIO: jijo@edge
