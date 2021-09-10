@@ -6,7 +6,7 @@ Digibyte Wallet built with React Native
 
 
 ## Contribute:
-DGB (DGB) - dgb1qt8fq23nr363g47855yyndwmcdctjmjseupkjtt
+DGB (DGB) - SS7qVVKi1kqHbooqjWVN8iqB5TsQxZqQL1
 
 OR
 
